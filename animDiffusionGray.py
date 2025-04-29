@@ -1,2 +1,2 @@
-def animDiffusionGray():
+def animDiffusionGray(grid):
     return 0
