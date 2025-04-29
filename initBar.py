@@ -1,8 +1,9 @@
 import numpy as np
+# Global constants
 
-AMBIENT = 25
-HOT = 50
-COLD = 0
+AMBIENT = (128, 128, 128)
+HOT = (0, 0, 0)
+COLD = (255, 255, 255)
 
 def initBar(m, n, hotSites, coldSites):
     """
@@ -15,11 +16,12 @@ def applyHotCold(bar, hotSites, coldSites):
     """
     Assigns hot and cold temperatures to the bar
     """
-    m, n = bar.shape
+    new_bar = bar
+    m, n = new_bar.shape
     for i in range(m):
         for j in range(n):
             if (i, j) in hotSites:
-                bar[i, j] = HOT
+                new_bar[i, j] = HOT
             elif (i, j) in coldSites:
-                bar[i, j] = COLD
-    return bar
+                new_bar[i, j] = COLD
+    return new_bar
