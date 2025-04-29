@@ -9,7 +9,7 @@ def initBar(m, n, hotSites, coldSites):
     """
     initializes a bar with ambient temperature
     """
-    ambientBar = np.full((m, n), AMBIENT)
+    ambientBar = np.full((m, n), AMBIENT, dtype=tuple)
     return applyHotCold(ambientBar, hotSites, coldSites)
 
 def applyHotCold(bar, hotSites, coldSites):
